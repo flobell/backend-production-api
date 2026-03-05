@@ -3,12 +3,14 @@ from app.db.session import engine
 from app.db.base import Base
 from app.db.models import user  # importante importar el modelo
 from app.api.v1.endpoints import users
+from app.api.v1.endpoints import auth
 
 Base.metadata.create_all(bind=engine)
 # print("Database tables created successfully.")
 
 app = FastAPI()
 app.include_router(users.router, prefix="/api/v1", tags=["users"])
+app.include_router(auth.router, prefix="/api/v1", tags=["auth"])
 
 
 @app.get("/")

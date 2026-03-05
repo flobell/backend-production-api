@@ -5,3 +5,11 @@ DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/backend_production
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
