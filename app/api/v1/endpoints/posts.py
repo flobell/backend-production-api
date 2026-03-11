@@ -44,6 +44,7 @@ def get_post(post_id: int, db: Session = Depends(get_db)):
     post = db.query(Post).filter(Post.id == post_id).first()
     return post
 
+
 @router.put("/{post_id}", response_model=PostResponse)
 def update_post(
     post_id: int,
