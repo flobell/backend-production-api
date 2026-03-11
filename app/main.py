@@ -4,6 +4,7 @@ from app.db.base import Base
 from app.db.models import user  # importante importar el modelo
 from app.api.v1.endpoints import users
 from app.api.v1.endpoints import auth
+from app.api.v1.endpoints import posts
 
 Base.metadata.create_all(bind=engine)
 # print("Database tables created successfully.")
@@ -11,6 +12,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.include_router(users.router, prefix="/api/v1", tags=["users"])
 app.include_router(auth.router, prefix="/api/v1", tags=["auth"])
+app.include_router(posts.router, prefix="/api/v1", tags=["posts"])
 
 
 @app.get("/")
