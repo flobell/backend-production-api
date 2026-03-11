@@ -29,8 +29,13 @@ def create_post(
 
 
 @router.get("", response_model=list[PostResponse])
-def get_posts(db: Session = Depends(get_db)):
-    posts = db.query(Post).all()
+def get_posts(
+    skip: int = 0,
+    limit: int = 10,
+    db: Session = Depends(get_db)
+):
+    limit = min(limit, 50)  # Limit to prevent excessive data retrieval
+    posts = db.query(Post).offset(skip).limit(limit).all()
     return posts
 
 
