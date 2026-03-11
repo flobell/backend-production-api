@@ -14,3 +14,8 @@ class PostResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class PostUpdate(BaseModel):
+    title: str
+    content: str
