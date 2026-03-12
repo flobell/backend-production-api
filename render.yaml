@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: backend-production-api
+    runtime: docker
+    plan: free
+    branch: master
+    autoDeploy: true
