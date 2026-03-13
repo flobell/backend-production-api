@@ -1,44 +1,50 @@
-# FastAPI Backend Portfolio Project
+# Backend Production API
 
-Backend API built with FastAPI, PostgreSQL and Docker.
-
-## Features
-
-- JWT Authentication
-- User registration and login
-- Posts CRUD
-- Authorization (users can only modify their own posts)
-- Pagination support
-- PostgreSQL database
-- Dockerized environment
+A production-style REST API built with FastAPI.
 
 ## Tech Stack
 
-- Python
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
+- Alembic
+- JWT Authentication
 - Docker
-- JWT
+- Render (cloud deployment)
 
-## Run the project
+## Features
+
+- User registration
+- JWT authentication
+- Posts CRUD
+- Pagination
+- Database migrations
+- Dockerized deployment
+- OpenAPI documentation
+
+## Live API
+
+Swagger documentation:
+
+https://backend-production-api.onrender.com/docs
+
+## Local Setup
 
 Clone the repository:
 
-```bash
-git clone <repo_url>
-cd <repo>
-```
+git clone https://github.com/yourusername/backend-production-api.git
 
-Start the project:
-```bash
-docker-compose up --build
-```
+Install dependencies:
 
-The API will be available at:
-```bash
-http://localhost:8000/docs
-```
+pip install -r requirements.txt
+
+Run the API:
+
+uvicorn app.main:app --reload
+
+## Docker
+
+docker compose up --build -d
 
 ## API Endpoints
 ### Auth
