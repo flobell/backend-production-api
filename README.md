@@ -168,11 +168,11 @@ uvicorn app.main:app --reload
 
 ## 🌐 Deployment
 
-The API is deployed on Render: Not Available
-<!-- 
+The API is deployed on Render:
+
 ```
-https://your-api-url.onrender.com
-``` -->
+https://backend-production-api.onrender.com/docs
+```
 
 ---
 
